@@ -2,16 +2,16 @@ package br.com.alura.screenmatch.modelos;
 //Projeto Screen Match.
 public class Filme {
 //métodos da class.
-	String nome;
-	int anoLancamento;
-	boolean incluidoNoPlano;
+	public String nome;
+	public int anoLancamento;
+	public boolean incluidoNoPlano;
 	private double somaDasAvaliacoes;
 	private int totalDeAvaliacoes;
-	int duracaoEmMinutos;
+	public int duracaoEmMinutos;
 	
 	
 	//método de ficha técnica, que já passa o nome do filme, ano de lançamento e duração.
-	void exibeFichaTecnica() {
+	public void exibeFichaTecnica() {
 		System.out.println("Nome: " + nome);
 		System.out.println("Ano de Lançamento: " + anoLancamento);
 		System.out.println("Duração: " + duracaoEmMinutos + " Minutos");
