@@ -27,55 +27,22 @@ public class Filme {
 	public double getMedia() {
 		return somaDasAvaliacoes / totalDeAvaliacoes;
 	}
-
+	
 	//método para retornar o total de avaliações.
 	public int getTotalDeAvaliacoes() {
 		return totalDeAvaliacoes;
-	}
-	
-	public void setTotalDeAvaliacoes(int totalDeAvaliacoes) {
-		this.totalDeAvaliacoes = totalDeAvaliacoes;
-	}
-	
-	//método para retornar o nome.
-	public String getNome() {
-		return nome;
 	}
 	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	
-	//método para retornar o ano de lançamento.
-	public int getAnoLancamento() {
-		return anoLancamento;
-	}
-	
 	public void setAnoLancamento(int anoLancamento) {
 		this.anoLancamento = anoLancamento;
 	}
 	
-	//método para retornar se esta incluso no plano.
-	public boolean getIncluidoNoPlano() {
-		return incluidoNoPlano;
-	}
-	
 	public void setIncluidoNoPlano(boolean incluidoNoPlano) {
 		this.incluidoNoPlano = incluidoNoPlano;
-	}
-	
-	//método para retornar a soma das avaliações.
-	public double getSomaDasAvaliacoes() {
-		return somaDasAvaliacoes;
-	}
-	
-	public void setSomaDasAvaliacoes(double somaDasAvaliacoes) {
-		this.somaDasAvaliacoes = somaDasAvaliacoes;
-	}
-	
-	//método para retornar a duração do filme em minutos.
-	public int getDuracaoEmMinutos() {
-		return duracaoEmMinutos;
 	}
 	
 	public void setDuracaoEmMinutos(int duracaoEmMinutos) {
