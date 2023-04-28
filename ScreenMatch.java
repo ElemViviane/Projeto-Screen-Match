@@ -1,5 +1,7 @@
+package br.com.alura.screenmatch.modelos;
+//Projeto Screen Match.
 public class Filme {
-//métodos da class
+//métodos da class.
 	String nome;
 	int anoLancamento;
 	boolean incluidoNoPlano;
@@ -32,6 +34,7 @@ public class Filme {
 }
 
 
+import br.com.alura.screenmatch.modelos.Filme;
 //testando a funcionalidade.
 public class Principal {
 	public static void main(String[] args) {
