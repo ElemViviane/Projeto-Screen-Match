@@ -15,7 +15,7 @@ public class Filme {
 		System.out.println("Nome: " + nome);
 		System.out.println("Ano de Lançamento: " + anoLancamento);
 		System.out.println("Duração: " + duracaoEmMinutos + " Minutos");
-		System.out.println("Incluido no plano: " + incluidoNoPlano);
+		System.out.println("Incluído no plano: " + incluidoNoPlano);
 	}
 	//método de somar e incrementar as avaliações.
 	public void avalia(double nota) {
