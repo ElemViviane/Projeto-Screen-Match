@@ -1,8 +1,9 @@
 package br.com.alura.screenmatch.modelos;
 //Projeto Screen Match.
-public class Filme {
+public class Titulo {
 //métodos da class.
 	private String nome;
+	private String genero;
 	private int anoLancamento;
 	private boolean incluidoNoPlano;
 	private double somaDasAvaliacoes;
@@ -12,10 +13,14 @@ public class Filme {
 	
 	//método de ficha técnica, que já passa o nome do filme, ano de lançamento e duração.
 	public void exibeFichaTecnica() {
+	    if (this.incluidoNoPlano == true) {
+		 System.out.println("Liberado, está incluso em seu plano!");
+	    } else {
+		System.out.println("Desculpe, não está incluso em seu plano!");
+	    }
 		System.out.println("Nome: " + nome);
+		System.out.println("Gênero: " + genero);
 		System.out.println("Ano de Lançamento: " + anoLancamento);
-		System.out.println("Duração: " + duracaoEmMinutos + " Minutos");
-		System.out.println("Incluído no plano: " + incluidoNoPlano);
 	}
 	//método de somar e incrementar as avaliações.
 	public void avalia(double nota) {
@@ -64,29 +69,182 @@ public class Filme {
 	public void setDuracaoEmMinutos(int duracaoEmMinutos) {
 		this.duracaoEmMinutos = duracaoEmMinutos;
 	}
+	
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
 }
 
 
-import br.com.alura.screenmatch.modelos.Filme;
+//class Filme que herda os atributos da superClass Titulo.
+package br.com.alura.screenmatch.modelos;
+
+public class Filme extends Titulo {
+
+	private String diretor;
+
+	public String getDiretor() {
+		return diretor;
+	}
+
+	public void setDiretor(String diretor) {
+		this.diretor = diretor;
+	}
+	
+	@Override
+	public int getDuracaoEmMinutos() {
+		return super.getDuracaoEmMinutos();
+	}
+}
+
+
+//Class Serie que herda os atributos da superClass Titulo.
+package br.com.alura.screenmatch.modelos;
+
+public class Serie extends Titulo {
+	
+    private int temporadas;
+    private int episodiosPorTempordas;
+    private boolean ativa;
+    private int minutosPorEpisodio;
+	
+	public int getTemporadas() {
+		return temporadas;
+ 	 }
+	
+	 public void setTemporadas(int temporadas) {
+		this.temporadas = temporadas;
+   	 }
+	
+  	 public int getEpisodiosPorTempordas() {
+		return episodiosPorTempordas;
+	 }
+	
+  	 public void setEpisodiosPorTempordas(int episodiosPorTempordas) {
+		this.episodiosPorTempordas = episodiosPorTempordas;
+	}
+	
+        public boolean isAtiva() {
+		return ativa;
+        }
+	
+        public void setAtiva(boolean ativa) {
+	        this.ativa = ativa;
+        }
+	
+	public int getMinutosPorEpisodio() {
+		return minutosPorEpisodio;
+	}
+	
+	public void setMinutosPorEpisodio(int minutosPorEpisodio) {
+		this.minutosPorEpisodio = minutosPorEpisodio;
+	}
+	
+	@Override
+	public int getDuracaoEmMinutos() {
+		return temporadas * episodiosPorTempordas * minutosPorEpisodio;
+	}
+}
+
+
+
 //testando a funcionalidade.
+import br.com.alura.screenmatch.modelos.Serie;
+import br.com.alura.screenmatch.modelos.Titulo;
+
 public class Principal {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 		
-		Filme meuFilme = new Filme();
-		meuFilme.setNome("A Culpa É das Estrelas");
-		meuFilme.setAnoLancamento(2014);
-		meuFilme.setDuracaoEmMinutos(126);
-	        meuFilme.setIncluidoNoPlano(true);
+	Titulo meuFilme = new Titulo();
+	meuFilme.setIncluidoNoPlano(true);
+	meuFilme.setNome("A Culpa É das Estrelas");
+	meuFilme.setGenero("Romance/Drama");
+	meuFilme.setAnoLancamento(2014);
+	meuFilme.setDuracaoEmMinutos(126);
 		
-		meuFilme.exibeFichaTecnica();
+	meuFilme.exibeFichaTecnica();
 		
-		meuFilme.avalia(8);
-		meuFilme.avalia(10);
-		meuFilme.avalia(7);
-		meuFilme.avalia(7.5);
+	meuFilme.avalia(8);
+	meuFilme.avalia(10);
+	meuFilme.avalia(7);
+	meuFilme.avalia(7.5);
+	meuFilme.avalia(5.5);
 		
-		System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacoes());
-		System.out.println("Média das avaliações: " + meuFilme.getMedia());
+	System.out.println("Duração: " + meuFilme.getDuracaoEmMinutos() + " Minutos");
+	System.out.println("Total de avaliações:  " + meuFilme.getTotalDeAvaliacoes());
+	System.out.println(String.format("Média das avaliações: %.1f", meuFilme.getMedia()));
 		
+	System.out.println();
+		
+	Titulo filme = new Titulo();
+	filme.setIncluidoNoPlano(false);
+	filme.setNome("Tá Chovendo Hambúguer");
+	filme.setGenero("Infantil/Comédia");
+	filme.setAnoLancamento(2009);
+	filme.setDuracaoEmMinutos(90);
+		
+	filme.exibeFichaTecnica();
+		
+	filme.avalia(7.9);
+	filme.avalia(6.9);
+	filme.avalia(10);
+	filme.avalia(5);
+	filme.avalia(6);
+		
+	System.out.println("Duração: " + filme.getDuracaoEmMinutos() + " Minutos");
+	System.out.println("Total de avaliações: " + filme.getTotalDeAvaliacoes());
+	System.out.println(String.format("Média das avaliações: %.1f", filme.getMedia()));
+		
+	System.out.println();
+		
+	Titulo f = new Titulo();
+	f.setIncluidoNoPlano(true);
+	f.setNome("Transformers - O Filme");
+	f.setGenero("Ação/Ficção Científica");
+	f.setAnoLancamento(2007);
+	f.setDuracaoEmMinutos(144);
+	
+	f.exibeFichaTecnica();
+		
+	f.avalia(10);
+	f.avalia(8.9);
+	f.avalia(8.7);
+	f.avalia(10);
+	f.avalia(9);
+		
+	System.out.println("Duração: " + f.getDuracaoEmMinutos() + " Minutos");
+	System.out.println("Total de avaliações: " + f.getTotalDeAvaliacoes());
+	System.out.println(String.format("Média das avaliações: %.1f", f.getMedia()));
+		
+	System.out.println();
+		
+	Serie serie = new Serie();
+	serie.setIncluidoNoPlano(false);
+	serie.setAtiva(true);
+	serie.setNome("Pousando No Amor");
+	serie.setGenero("Comédia Romântica");
+	serie.setAnoLancamento(2019);
+	serie.setMinutosPorEpisodio(70);
+	serie.setTemporadas(1);
+	serie.setEpisodiosPorTempordas(16);
+		
+	serie.exibeFichaTecnica();
+		
+	serie.avalia(10);
+	serie.avalia(9.9);
+	serie.avalia(8.9);
+	serie.avalia(10);
+	serie.avalia(10);
+		
+	System.out.println(String.format("Duração total de %d Minutos, "
+		+ "para maratonar %s ", serie.getDuracaoEmMinutos(), serie.getNome()));
+		
+	System.out.println("Temporadas: " + serie.getTemporadas());
+	System.out.println("Episódios por temporada: " + serie.getEpisodiosPorTempordas());
+	System.out.println("Minutos por Episódio: " + serie.getMinutosPorEpisodio() 
+		+ " Minutos");
+	
+	System.out.println("Total de avaliações: " + serie.getTotalDeAvaliacoes());
+	System.out.println(String.format("Média das avaliações: %.1f", serie.getMedia()));
 	}
 }
