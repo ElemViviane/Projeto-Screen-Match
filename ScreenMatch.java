@@ -146,105 +146,183 @@ public class Serie extends Titulo {
 	}
 }
 
+//claculador de tempo para maratonar.
+package br.com.alura.screenmatch.calculos;
+
+import br.com.alura.screenmatch.modelos.Titulo;
+
+public class CalculadoraDeTempo {
+
+	private int tempoTotal;
+	
+	public int getTempoTotal() {
+		return tempoTotal;
+	}
+	public void inclui(Titulo filme) {
+		tempoTotal += filme.getDuracaoEmMinutos();
+	}
+}
+
 
 
 //testando a funcionalidade.
 import br.com.screenmatch.modelos.Serie;
+
 import br.com.screenmatch.modelos.Titulo;
+
+import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 
 public class Principal {
     public static void main(String[] args) {
 		
 	Titulo meuFilme = new Titulo();
-	meuFilme.setIncluidoNoPlano(true);
-	meuFilme.setNome("A Culpa É das Estrelas");
-	meuFilme.setGenero("Romance/Drama");
-	meuFilme.setAnoLancamento(2014);
-	meuFilme.setDuracaoEmMinutos(126);
+		meuFilme.setAssiste("Filme");
+		System.out.println(meuFilme.getAssiste());
+		meuFilme.setIncluidoNoPlano(true);
+		meuFilme.setNome("A Culpa É das Estrelas");
+		meuFilme.setGenero("Romance/Drama");
+		meuFilme.setAnoLancamento(2014);
+		meuFilme.setDuracaoEmMinutos(126);
 		
-	meuFilme.exibeFichaTecnica();
+		meuFilme.exibeFichaTecnica();
 		
-	meuFilme.avalia(8);
-	meuFilme.avalia(10);
-	meuFilme.avalia(7);
-	meuFilme.avalia(7.5);
-	meuFilme.avalia(5.5);
+		meuFilme.avalia(8);
+		meuFilme.avalia(10);
+		meuFilme.avalia(7);
+		meuFilme.avalia(7.5);
+		meuFilme.avalia(5.5);
 		
-	System.out.println("Duração: " + meuFilme.getDuracaoEmMinutos() + " Minutos");
-	System.out.println("Total de avaliações:  " + meuFilme.getTotalDeAvaliacoes());
-	System.out.println(String.format("Média das avaliações: %.1f", meuFilme.getMedia()));
+		System.out.println("Duração: " + meuFilme.getDuracaoEmMinutos() + " Minutos");
+		System.out.println("Total de avaliações:  " + meuFilme.getTotalDeAvaliacoes());
+		System.out.println(String.format("Média das avaliações: %.1f", meuFilme.getMedia()));
 		
-	System.out.println();
+		System.out.println();
 		
-	Titulo filme = new Titulo();
-	filme.setIncluidoNoPlano(false);
-	filme.setNome("Tá Chovendo Hambúguer");
-	filme.setGenero("Infantil/Comédia");
-	filme.setAnoLancamento(2009);
-	filme.setDuracaoEmMinutos(90);
+		Titulo filme = new Titulo();
+		filme.setAssiste("Filme");
+		System.out.println(filme.getAssiste());
+		filme.setIncluidoNoPlano(false);
+		filme.setNome("Tá Chovendo Hambúguer");
+		filme.setGenero("Infantil/Comédia");
+		filme.setAnoLancamento(2009);
+		filme.setDuracaoEmMinutos(90);
 		
-	filme.exibeFichaTecnica();
+		filme.exibeFichaTecnica();
 		
-	filme.avalia(7.9);
-	filme.avalia(6.9);
-	filme.avalia(10);
-	filme.avalia(5);
-	filme.avalia(6);
+		filme.avalia(7.9);
+		filme.avalia(6.9);
+		filme.avalia(10);
+		filme.avalia(5);
+		filme.avalia(6);
 		
-	System.out.println("Duração: " + filme.getDuracaoEmMinutos() + " Minutos");
-	System.out.println("Total de avaliações: " + filme.getTotalDeAvaliacoes());
-	System.out.println(String.format("Média das avaliações: %.1f", filme.getMedia()));
+		System.out.println("Duração: " + filme.getDuracaoEmMinutos() + " Minutos");
+		System.out.println("Total de avaliações: " + filme.getTotalDeAvaliacoes());
+		System.out.println(String.format("Média das avaliações: %.1f", filme.getMedia()));
 		
-	System.out.println();
+		System.out.println();
 		
-	Titulo f = new Titulo();
-	f.setIncluidoNoPlano(true);
-	f.setNome("Transformers - O Filme");
-	f.setGenero("Ação/Ficção Científica");
-	f.setAnoLancamento(2007);
-	f.setDuracaoEmMinutos(144);
+		Titulo f = new Titulo();
+		f.setAssiste("Filme");
+		System.out.println(f.getAssiste());
+		f.setIncluidoNoPlano(true);
+		f.setNome("Transformers - O Filme");
+		f.setGenero("Ação/Ficção Científica");
+		f.setAnoLancamento(2007);
+		f.setDuracaoEmMinutos(144);
 	
-	f.exibeFichaTecnica();
+		f.exibeFichaTecnica();
 		
-	f.avalia(10);
-	f.avalia(8.9);
-	f.avalia(8.7);
-	f.avalia(10);
-	f.avalia(9);
+		f.avalia(10);
+		f.avalia(8.9);
+		f.avalia(8.7);
+		f.avalia(10);
+		f.avalia(9);
 		
-	System.out.println("Duração: " + f.getDuracaoEmMinutos() + " Minutos");
-	System.out.println("Total de avaliações: " + f.getTotalDeAvaliacoes());
-	System.out.println(String.format("Média das avaliações: %.1f", f.getMedia()));
+		System.out.println("Duração: " + f.getDuracaoEmMinutos() + " Minutos");
+		System.out.println("Total de avaliações: " + f.getTotalDeAvaliacoes());
+		System.out.println(String.format("Média das avaliações: %.1f", f.getMedia()));
 		
-	System.out.println();
+		System.out.println();
 		
-	Serie serie = new Serie();
-	serie.setIncluidoNoPlano(false);
-	serie.setAtiva(true);
-	serie.setNome("Pousando No Amor");
-	serie.setGenero("Comédia Romântica");
-	serie.setAnoLancamento(2019);
-	serie.setMinutosPorEpisodio(70);
-	serie.setTemporadas(1);
-	serie.setEpisodiosPorTempordas(16);
+		Serie serie = new Serie();
+		serie.setAssiste("Dorama/Kdrama");
+		System.out.println(serie.getAssiste());
+		serie.setIncluidoNoPlano(false);
+		serie.setAtiva(true);
+		serie.setNome("Pousando No Amor");
+		serie.setGenero("Comédia Romântica");
+		serie.setAnoLancamento(2019);
+		serie.setMinutosPorEpisodio(70);
+		serie.setTemporadas(1);
+		serie.setEpisodiosPorTempordas(16);
 		
-	serie.exibeFichaTecnica();
+		serie.exibeFichaTecnica();
 		
-	serie.avalia(10);
-	serie.avalia(9.9);
-	serie.avalia(8.9);
-	serie.avalia(10);
-	serie.avalia(10);
+		serie.avalia(10);
+		serie.avalia(9.9);
+		serie.avalia(8.9);
+		serie.avalia(10);
+		serie.avalia(10);
 		
-	System.out.println(String.format("Duração total de %d Minutos, "
-		+ "para maratonar %s ", serie.getDuracaoEmMinutos(), serie.getNome()));
+		System.out.println(String.format("Duração total de %d Minutos, "
+				+ "para maratonar %s ", serie.getDuracaoEmMinutos(), serie.getNome()));
 		
-	System.out.println("Temporadas: " + serie.getTemporadas());
-	System.out.println("Episódios por temporada: " + serie.getEpisodiosPorTempordas());
-	System.out.println("Minutos por Episódio: " + serie.getMinutosPorEpisodio() 
+		System.out.println("Temporadas: " + serie.getTemporadas());
+		System.out.println("Episódios por temporada: " + serie.getEpisodiosPorTempordas());
+		System.out.println("Minutos por episódio: " + serie.getMinutosPorEpisodio() 
 		+ " Minutos");
-	
-	System.out.println("Total de avaliações: " + serie.getTotalDeAvaliacoes());
-	System.out.println(String.format("Média das avaliações: %.1f", serie.getMedia()));
+		
+		System.out.println("Total de avaliações: " + serie.getTotalDeAvaliacoes());
+		System.out.println(String.format("Média das avaliações: %.1f", serie.getMedia()));
+		
+		System.out.println();
+		
+		Serie supernatural = new Serie();
+		supernatural.setAssiste("Série");
+		System.out.println(supernatural.getAssiste());
+		supernatural.setIncluidoNoPlano(true);
+		supernatural.setAtiva(true);
+		supernatural.setNome("Supernatural");
+		supernatural.setGenero("Mistério");
+		supernatural.setAnoLancamento(2005);
+		supernatural.setMinutosPorEpisodio(45);
+		supernatural.setTemporadas(15);
+		supernatural.setEpisodiosPorTempordas(20);
+		
+		supernatural.exibeFichaTecnica();
+		
+		supernatural.avalia(10);
+		supernatural.avalia(3);
+		supernatural.avalia(10);
+		supernatural.avalia(9.9);
+		supernatural.avalia(9.8);
+		
+		System.out.println(String.format("Duração total de %d Minutos, "
+				+ "para maratonar %s ", supernatural.getDuracaoEmMinutos(),
+				supernatural.getNome()));
+		
+		System.out.println("Temporadas: " + supernatural.getTemporadas());
+		System.out.println("Episódios por temporada: " + 
+				supernatural.getEpisodiosPorTempordas());
+		
+		System.out.println("Minutos por episódio: " + 
+				supernatural.getMinutosPorEpisodio() + " Minutos");
+		
+		System.out.println("Total de avaliações: " + supernatural.getTotalDeAvaliacoes());
+		System.out.println(String.format("Média das avaliações: %.1f",
+				supernatural.getMedia()));
+		
+		System.out.println();
+		
+		CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+		calculadora.inclui(meuFilme);
+		calculadora.inclui(filme);
+		calculadora.inclui(f);
+		calculadora.inclui(supernatural);
+		
+		System.out.println(String.format("Tempo total para maratonar: %s, %s,"
+				+ "\n%s, %s é %d Minutos",
+				meuFilme.getNome(), filme.getNome(), f.getNome(), supernatural.getNome(),
+				calculadora.getTempoTotal()));
 	}
 }
