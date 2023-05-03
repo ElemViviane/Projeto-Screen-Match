@@ -168,8 +168,8 @@ public class CalculadoraDeTempo {
 	public int getTempoTotal() {
 		return tempoTotal;
 	}
-	public void inclui(Titulo filme) {
-		tempoTotal += filme.getDuracaoEmMinutos();
+	public void inclui(Titulo titulo) {
+		this.tempoTotal += titulo.getDuracaoEmMinutos();
 	}
 }
 
