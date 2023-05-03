@@ -2,6 +2,7 @@ package br.com.screenmatch.modelos;
 //Projeto Screen Match.
 public class Titulo {
 //métodos da class.
+	private String assiste;
 	private String nome;
 	private String genero;
 	private int anoLancamento;
@@ -72,6 +73,15 @@ public class Titulo {
 	
 	public void setGenero(String genero) {
 		this.genero = genero;
+	}
+	
+	
+	public String getAssiste() {
+		return assiste;
+	}
+
+	public void setAssiste(String assiste) {
+		this.assiste = assiste;
 	}
 }
 
