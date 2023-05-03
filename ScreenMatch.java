@@ -1,4 +1,4 @@
-package br.com.alura.screenmatch.modelos;
+package br.com.screenmatch.modelos;
 //Projeto Screen Match.
 public class Titulo {
 //métodos da class.
@@ -77,7 +77,7 @@ public class Titulo {
 
 
 //class Filme que herda os atributos da superClass Titulo.
-package br.com.alura.screenmatch.modelos;
+package br.com.screenmatch.modelos;
 
 public class Filme extends Titulo {
 
@@ -99,7 +99,7 @@ public class Filme extends Titulo {
 
 
 //Class Serie que herda os atributos da superClass Titulo.
-package br.com.alura.screenmatch.modelos;
+package br.com.screenmatch.modelos;
 
 public class Serie extends Titulo {
 	
@@ -149,8 +149,8 @@ public class Serie extends Titulo {
 
 
 //testando a funcionalidade.
-import br.com.alura.screenmatch.modelos.Serie;
-import br.com.alura.screenmatch.modelos.Titulo;
+import br.com.screenmatch.modelos.Serie;
+import br.com.screenmatch.modelos.Titulo;
 
 public class Principal {
     public static void main(String[] args) {
