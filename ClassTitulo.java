@@ -1,4 +1,4 @@
-package br.com.alura.screenmatch.modelos;
+package br.com.screenmatch.modelos;
 
 public class Titulo {
 //métodos da class
