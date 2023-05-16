@@ -1,18 +1,18 @@
 import java.util.ArrayList;
 
-import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
+import br.com..screenmatch.calculos.CalculadoraDeTempo;
 
-import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
+import br.com.screenmatch.calculos.FiltroRecomendacao;
 
-import br.com.alura.screenmatch.modelos.Serie;
+import br.com.screenmatch.modelos.Serie;
 
-import br.com.alura.screenmatch.modelos.Filme;
+import br.com.screenmatch.modelos.Filme;
 
 
 public class Principal {
 	public static void main(String[] args) {
 		
-		System.out.println("______________________________________________");
+	
 		Filme aCulpaEDasEstrelas = new Filme();
 		aCulpaEDasEstrelas.setIncluidoNoPlano(true);
 		aCulpaEDasEstrelas.setNome("A Culpa É das Estrelas");
@@ -40,16 +40,14 @@ public class Principal {
 				aCulpaEDasEstrelas.getMedia()));
 		
 		FiltroRecomendacao aCulpaEstrelas = new FiltroRecomendacao();
-        aCulpaEstrelas.filtra(aCulpaEDasEstrelas);
+                aCulpaEstrelas.filtra(aCulpaEDasEstrelas);
         
-        System.out.println("Classificação: " 
-        + aCulpaEDasEstrelas.getClassificacao() + "★");
+               System.out.println("Classificação: " 
+               + aCulpaEDasEstrelas.getClassificacao() + "★");
         
-        System.out.println("______________________________________________");
 		System.out.println("\n");
 		
 		
-		System.out.println("______________________________________________");
 		Filme taChovendoHamburguer = new Filme();
 		taChovendoHamburguer.setIncluidoNoPlano(false);
 		taChovendoHamburguer.setNome("Tá Chovendo Hambúguer");
@@ -82,11 +80,9 @@ public class Principal {
 		System.out.println("Classificação: " 
 		+ taChovendoHamburguer.getClassificacao() + "★");
 		
-		System.out.println("_________________________________________________");
 		System.out.println("\n");
 		
 		
-		System.out.println("_________________________________________________");
 		Filme transformersOFilme = new Filme();
 		transformersOFilme.setIncluidoNoPlano(true);
 		transformersOFilme.setNome("Transformers - O Filme");
@@ -119,11 +115,9 @@ public class Principal {
 		System.out.println("Classificação: " 
 		+ transformersOFilme.getClassificacao() + "★");
 		
-		System.out.println("___________________________________________________________");
 		System.out.println("\n");
 		
 		
-		System.out.println("_____________________________________________________________");
 		Filme panicoVI = new Filme();
 		panicoVI.setIncluidoNoPlano(true);
 		panicoVI.setNome("Pânico VI");
@@ -153,11 +147,9 @@ public class Principal {
 		
 		System.out.println("Classificação: " + panicoVI.getClassificacao() + "★");
 		
-		System.out.println("_____________________________________________________________");
 		System.out.println("\n");
 		
 		
-		System.out.println("___________________________________________________");
 		Filme itACoisa = new Filme();
 		itACoisa.setIncluidoNoPlano(true);
 		itACoisa.setNome("IT - A Coisa");
@@ -187,11 +179,9 @@ public class Principal {
 		
 		System.out.println("Classificação: " + itACoisa.getClassificacao() + "★");
 		
-		System.out.println("____________________________________________________");
 		System.out.println("\n");
 		
 		
-		System.out.println("_____________________________________________________________");
 		Serie pousandoNoAmor = new Serie();
 		pousandoNoAmor.setAssiste("Dorama/Kdrama");                  
 		System.out.println(pousandoNoAmor.getAssiste());
@@ -238,11 +228,9 @@ public class Principal {
 		System.out.println(String.format("Duração total de %d Minutos, para maratonar %s ",
 				pousandoNoAmor.getDuracaoEmMinutos(), pousandoNoAmor.getNome()));
 		
-		System.out.println("____________________________________________________________");
 		System.out.println("\n");
 		
-		
-		System.out.println("____________________________________________________________");
+
 		Serie supernatural = new Serie();
 		supernatural.setIncluidoNoPlano(true);
 		supernatural.setAtiva(true);
@@ -287,7 +275,6 @@ public class Principal {
 				+ "para maratonar %s ", supernatural.getDuracaoEmMinutos(),
 				supernatural.getNome()));
 		
-		System.out.println("____________________________________________________________");
 		System.out.println("\n");
 		
 		
@@ -299,14 +286,10 @@ public class Principal {
 		calculadora.inclui(pousandoNoAmor);
 		calculadora.inclui(itACoisa);
 		
-		System.out.println("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨"
-				+ "¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
 		System.out.println(String.format("Tempo total para maratonar: %s e %s,"
 				+ " é de %d Minutos", supernatural.getNome(), pousandoNoAmor.getNome(),
-				calculadora.getTempoTotal()));
-		System.out.println("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨"
-				+ "¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n");
-				
+				calculadora.getTempoTotal() + "\n"));
+		
 				
 		ArrayList<Filme> filmes = new ArrayList<>();
 		filmes.add(transformersOFilme);
